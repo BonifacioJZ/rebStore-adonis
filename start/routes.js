@@ -26,5 +26,18 @@ Route.group(() => {
     Route.get('/users', 'UserController.index')
     Route.put('/user', 'UserController.update').validator('Update')
     Route.delete('/user/:id', 'UserController.delete')
-
 }).prefix('/api/v1/admin').middleware('auth')
+
+Route.group(() => {
+    Route.get('/', 'ServiceController.index')
+    Route.get('/page/:page', 'ServiceController.index')
+    Route.post('/', 'ServiceController.store').validator('Service')
+    Route.get('/:id', 'ServiceController.show')
+    Route.put('/:id', 'ServiceController.update').validator('Service')
+    Route.delete('/:id', 'ServiceController.delete')
+
+}).prefix('/api/v1/admin/service').middleware('auth')
+
+Route.group(() => {
+    Route.get('/', 'ServiceController.index')
+}).prefix('/api/vi/admin/product').middleware('auth')
