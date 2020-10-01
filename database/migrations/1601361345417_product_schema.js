@@ -9,10 +9,10 @@ class ProductSchema extends Schema {
             table.increments()
             table.integer('service_id').unsigned().references('id').inTable('services')
             table.string('name', 200).notNullable()
-            table.string('display_name', 50).notNullable().unique()
+            table.string('display_name', 50).notNullable()
             table.string('description')
             table.decimal('price').notNullable()
-            table.decimal('import').notNullable()
+            table.decimal('importe').notNullable()
             table.timestamps()
         })
     }

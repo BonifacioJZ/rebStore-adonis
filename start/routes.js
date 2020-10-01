@@ -39,5 +39,6 @@ Route.group(() => {
 }).prefix('/api/v1/admin/service').middleware('auth')
 
 Route.group(() => {
-    Route.get('/', 'ServiceController.index')
+    Route.get('/', 'ProductController.index')
+    Route.post('/', 'ProductController.store').validator('Product')
 }).prefix('/api/vi/admin/product').middleware('auth')
