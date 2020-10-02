@@ -22,7 +22,10 @@ class ServiceController {
     async show({ response, params }) {
         const { id } = params;
         const service = await Service.find(id);
-        return response.status(200).send(service)
+        return response.status(200).send({
+            service,
+            products: await service.products().fetch()
+        })
     }
     async update({ response, request, params }) {
         const { id } = params;

@@ -7,6 +7,7 @@ class Product extends Model {
     services() {
         return this.belongsTo('App/Models/Service')
     }
+    prices() { return this.belongsToMany('App/Models/Price') }
 }
 
 module.exports = Product

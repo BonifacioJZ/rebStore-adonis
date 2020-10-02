@@ -6,7 +6,6 @@ class Product {
             service_id: `required`,
             name: `required|string|max:200`,
             display_name: `required|string|max:50`,
-            price: `required|integer`,
             importe: `required|integer`
         }
     }

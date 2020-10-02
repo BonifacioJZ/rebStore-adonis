@@ -11,7 +11,6 @@ class ProductSchema extends Schema {
             table.string('name', 200).notNullable()
             table.string('display_name', 50).notNullable()
             table.string('description')
-            table.decimal('price').notNullable()
             table.decimal('importe').notNullable()
             table.timestamps()
         })

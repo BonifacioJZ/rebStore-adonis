@@ -39,6 +39,21 @@ Route.group(() => {
 }).prefix('/api/v1/admin/service').middleware('auth')
 
 Route.group(() => {
+
+    Route.post('/', 'PriceController.store').validator(['Price'])
+    Route.get('/:id', 'PriceController.show')
+    Route.get('/', 'PriceController.index')
+    Route.put('/:id', 'PriceController.update')
+    Route.delete('/:id', 'PriceController.delete')
+
+
+}).prefix('/api/v1/admin/price').middleware(['auth'])
+
+Route.group(() => {
     Route.get('/', 'ProductController.index')
+    Route.get('/:id', 'ProductController.show')
     Route.post('/', 'ProductController.store').validator('Product')
+    Route.put('/:id', 'ProductController.update').validator('Product')
+    Route.delete('/:id', 'ProductController.delete')
+
 }).prefix('/api/vi/admin/product').middleware('auth')

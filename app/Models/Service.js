@@ -7,6 +7,7 @@ class Service extends Model {
     products() {
         return this.hasMany('App/Models/Product')
     }
+    numbers() { return this.hasMany('App/Models/Number') }
 }
 
 module.exports = Service
